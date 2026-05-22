@@ -56,7 +56,7 @@ export function SlideProduction({ active, goTo }) {
           >
             {/* LEFT — editorial copy */}
             <div className="min-w-0 flex flex-col justify-center">
-              <motion.div variants={item} className="inline-flex self-start items-center gap-2 rounded-full px-3 py-1.5 bg-[#111111] text-white text-[11.5px] sm:text-[12px] font-semibold tracking-[0.02em]">
+              <motion.div variants={item} className="inline-flex self-start items-center gap-2 rounded-[10px] px-3 py-1.5 bg-[#111111] text-white text-[11.5px] sm:text-[12px] font-semibold tracking-[0.02em]">
                 <Factory className="h-3.5 w-3.5 shrink-0" strokeWidth={2} />
                 <span>Виробництво пневмопідвіски · Україна · 20 років</span>
               </motion.div>
@@ -83,7 +83,7 @@ export function SlideProduction({ active, goTo }) {
                 {HERO_AUDIENCE.map((a) => (
                   <li
                     key={a.label}
-                    className="inline-flex items-center gap-1.5 rounded-full bg-white border border-[#E7E7E7] px-2.5 py-1 text-[11.5px] lg:text-[12px] font-semibold text-[#111111] micro-lift"
+                    className="inline-flex items-center gap-1.5 rounded-[10px] bg-white border border-[#E7E7E7] px-2.5 py-1.5 text-[11.5px] lg:text-[12px] font-semibold text-[#111111] micro-lift"
                   >
                     <a.icon className="h-3.5 w-3.5 text-[#111111]" strokeWidth={2} />
                     {a.label}
@@ -96,18 +96,18 @@ export function SlideProduction({ active, goTo }) {
                   href={telegramUrl(settings)}
                   target="_blank"
                   rel="noreferrer"
-                  className="group relative inline-flex items-center justify-center gap-3 h-14 lg:h-[60px] px-6 sm:px-7 rounded-[14px] sm:rounded-[16px] text-[14px] sm:text-[15px] font-semibold bg-[#111111] text-white hover:bg-[#000000] transition-colors cta-lift w-full sm:w-auto"
+                  className="group relative inline-flex items-center justify-center gap-3 h-14 lg:h-[60px] px-6 sm:px-7 rounded-[10px] text-[14px] sm:text-[15px] font-semibold bg-[#111111] text-white hover:bg-[#000000] transition-colors cta-lift w-full sm:w-auto"
                   data-testid="hero-primary-cta"
                 >
                   <span>Отримати прайс від виробника</span>
-                  <span className="h-7 w-7 rounded-full bg-white text-[#111111] grid place-items-center transition-transform duration-300 group-hover:translate-x-1">
+                  <span className="h-7 w-7 rounded-[10px] bg-white text-[#111111] grid place-items-center transition-transform duration-300 group-hover:translate-x-1">
                     <ArrowRight className="h-4 w-4" />
                   </span>
                 </a>
                 <button
                   type="button"
                   onClick={() => goTo(2)}
-                  className="inline-flex items-center justify-center gap-2 h-14 lg:h-[60px] px-6 rounded-[14px] sm:rounded-[16px] text-[13.5px] sm:text-[14.5px] font-medium bg-transparent text-[#111111] border border-[#111111]/20 hover:bg-[#111111] hover:text-white transition-colors micro-lift"
+                  className="inline-flex items-center justify-center gap-2 h-14 lg:h-[60px] px-6 rounded-[10px] text-[13.5px] sm:text-[14.5px] font-medium bg-transparent text-[#111111] border border-[#111111]/20 hover:bg-[#111111] hover:text-white transition-colors micro-lift"
                   data-testid="hero-secondary-cta"
                 >
                   Переглянути продукцію
@@ -281,7 +281,7 @@ export function SlideProblem({ active, goTo }) {
             <div className="flex flex-col justify-center min-w-0">
               <motion.div
                 variants={item}
-                className="inline-flex self-start items-center gap-2 rounded-full bg-white/10 border border-white/15 text-white text-[11px] font-bold tracking-[0.16em] uppercase px-3 py-2"
+                className="inline-flex self-start items-center gap-2 rounded-[10px] bg-white/10 border border-white/15 text-white text-[11px] font-bold tracking-[0.16em] uppercase px-3 py-2"
               >
                 <span className="font-heading text-white/60">02</span>
                 <Factory className="h-3.5 w-3.5" strokeWidth={2.4} />
@@ -354,7 +354,7 @@ export function SlideProblem({ active, goTo }) {
                 {PROD_PILLS.map((r) => (
                   <li
                     key={r.title}
-                    className="inline-flex items-center gap-1.5 rounded-full bg-white/8 border border-white/15 px-3 py-1.5 text-[12px] lg:text-[12px] font-semibold text-white"
+                    className="inline-flex items-center gap-1.5 rounded-[10px] bg-white/8 border border-white/15 px-3 py-1.5 text-[12px] lg:text-[12px] font-semibold text-white"
                   >
                     <r.icon className="h-3.5 w-3.5 text-[#22c55e]" strokeWidth={2.2} />
                     {r.title}

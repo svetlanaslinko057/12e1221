@@ -255,6 +255,60 @@ body.mobile-home {
     .has-sticky-mcta { padding-bottom: calc(var(--sticky-cta-h) + env(safe-area-inset-bottom, 0px)); }
 }
 
+/* ============================================================
+   UNIFIED 10 PX RADIUS FOR ALL HOME-PAGE PALETTES
+   User feedback: «все карточки должны быть одинаковые с радиусом
+   десять. Производство, получить прайс, продукция, палитры — все
+   эти палитры. 10 px». Applies inside every slide (data-slide-shell
+   present). Tiny decorative dots (status pings, page-rail bullets)
+   stay round.
+============================================================ */
+[data-slide-shell] .rounded-full,
+[data-slide-shell] [class*="rounded-[12px]"],
+[data-slide-shell] [class*="rounded-[14px]"],
+[data-slide-shell] [class*="rounded-[16px]"],
+[data-slide-shell] [class*="rounded-[18px]"],
+[data-slide-shell] [class*="rounded-[20px]"],
+[data-slide-shell] [class*="rounded-[22px]"],
+[data-slide-shell] [class*="rounded-[24px]"],
+[data-slide-shell] [class*="rounded-[26px]"],
+[data-slide-shell] [class*="rounded-[28px]"] {
+    border-radius: 10px !important;
+}
+
+/* Tiny decorative dots & circular icon-only indicators keep their
+   round shape. Detected by h-1/h-1.5/h-2/h-3 small sizes. */
+[data-slide-shell] .rounded-full.h-1,
+[data-slide-shell] .rounded-full.h-1\.5,
+[data-slide-shell] .rounded-full.h-2,
+[data-slide-shell] .rounded-full.h-3 {
+    border-radius: 9999px !important;
+}
+
+/* Mobile chrome (top bar menu button, sticky bottom CTA buttons,
+   sheet menu items) — also normalized to 10 px so the whole home
+   page reads as one consistent rectangle radius. */
+[data-testid="mobile-cta-telegram"],
+[data-testid="mobile-cta-whatsapp"],
+[data-testid="mobile-cta-call"],
+[data-testid="mobile-menu-button"],
+[data-testid^="mobile-sheet-nav-"],
+[data-testid="mobile-sheet-telegram"],
+[data-testid="mobile-sheet-whatsapp"],
+[data-testid="mobile-sheet-call"],
+[data-testid="mobile-sheet-email"] {
+    border-radius: 10px !important;
+}
+
+/* Form inputs & submit buttons on slide 5 → 10 px too */
+[data-testid="final-cta-spec-input"],
+[data-testid="final-cta-contact-input"],
+[data-testid="final-cta-submit-button"],
+[data-testid^="final-cta-clienttype-"] {
+    border-radius: 10px !important;
+}
+
+
 /* =============================================================
    MOBILE VERTICAL MODE OVERRIDES (body.mobile-home)
    Mobile renders all slides as ONE CONTINUOUS RIBBON. No per-slide
