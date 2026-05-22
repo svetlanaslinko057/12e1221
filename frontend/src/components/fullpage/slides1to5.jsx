@@ -386,7 +386,7 @@ export function SlideProblem({ active, goTo }) {
             {/* RIGHT: photo composition — 1 hero + 2 small (cell · product · QC) */}
             <motion.div
               variants={scaleUp}
-              className="relative hidden lg:grid grid-cols-3 grid-rows-2 gap-2.5 lg:gap-3 h-full max-h-[78vh] min-h-0"
+              className="relative hidden lg:grid grid-cols-3 grid-rows-2 gap-2.5 lg:gap-3 h-full min-h-0"
               data-testid="slide-manufacturing-photos"
             >
               {/* Big hero photo — workshop / Київ */}
@@ -604,13 +604,12 @@ export function SlideProductsAndCases({ active }) {
                 <div className="flex-[1] min-h-0 grid lg:grid-cols-[1.6fr_1fr] gap-3 lg:gap-3" data-testid="slide-cases-strip">
                   {/* 5 case cards — desktop grid / mobile horizontal swipe */}
                   <div
-                    className="min-h-0 flex gap-2.5 overflow-x-auto snap-x snap-mandatory lg:grid lg:grid-cols-5 lg:gap-2.5 lg:overflow-visible -mx-5 px-5 lg:mx-0 lg:px-0 pb-1 lg:pb-0"
-                    style={{ scrollbarWidth: "none", WebkitOverflowScrolling: "touch" }}
+                    className="min-h-0 grid grid-cols-2 gap-2.5 lg:grid lg:grid-cols-5 lg:gap-2.5"
                   >
                     {CASE_TAGS.map((c, i) => (
                       <article
                         key={c.tag}
-                        className="group relative rounded-[16px] lg:rounded-[16px] overflow-hidden border border-[#E7E7E7] bg-white block shrink-0 w-[44%] sm:w-[32%] lg:w-auto snap-start aspect-[3/4] lg:aspect-auto micro-lift"
+                        className="group relative rounded-[16px] lg:rounded-[16px] overflow-hidden border border-[#E7E7E7] bg-white block aspect-[3/4] lg:aspect-auto micro-lift"
                         data-testid={`slide-case-${c.tag}`}
                       >
                         <div className="absolute inset-0 overflow-hidden bg-[#F1F1EF]">

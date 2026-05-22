@@ -256,6 +256,24 @@ body.mobile-home {
 }
 
 /* ============================================================
+   NO INTERNAL SCROLL INSIDE SLIDE CARDS
+   User feedback: «По карточкам не має бути внутрішнього скролу».
+   On both desktop and mobile, neutralise any overflow-y-auto /
+   overflow-y-scroll that may have leaked into slide content via
+   utility classes. Every card stays static — content is either
+   sized via flex layout or clipped (overflow:hidden), never
+   scrollable.
+============================================================ */
+[data-slide-shell] .overflow-y-auto,
+[data-slide-shell] .overflow-y-scroll,
+[data-slide-shell] .overflow-auto,
+[data-slide-shell] .overflow-scroll {
+    overflow-y: visible !important;
+    overflow-x: visible !important;
+    max-height: none !important;
+}
+
+/* ============================================================
    UNIFIED 10 PX RADIUS FOR ALL HOME-PAGE PALETTES
    User feedback: «все карточки должны быть одинаковые с радиусом
    десять. Производство, получить прайс, продукция, палитры — все
