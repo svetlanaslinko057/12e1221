@@ -1,4 +1,5 @@
 import { useEffect, useState, useCallback } from "react";
+import { motion } from "framer-motion";
 import { Menu, Send, Phone, MessageCircle, X, ArrowRight, Mail } from "lucide-react";
 import { useSettings } from "@/lib/settings-context";
 import { telegramUrl, whatsappUrl, telUrl, mailtoUrl } from "@/lib/cta";
@@ -105,15 +106,19 @@ export default function MobileStack({ slides, labels }) {
         }}
       >
         {slides.map((Slide, i) => (
-          <section
+          <motion.section
             id={`slide-${i + 1}`}
             key={i}
             data-mobile-slide-section={i}
             data-slide={i + 1}
             className="relative w-full"
+            initial={{ opacity: 0, y: 32 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15, margin: "0px 0px -10% 0px" }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: i === 0 ? 0 : 0.05 }}
           >
             <Slide index={i} active={true} total={total} goTo={goTo} />
-          </section>
+          </motion.section>
         ))}
       </main>
 

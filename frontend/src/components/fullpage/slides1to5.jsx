@@ -52,10 +52,10 @@ export function SlideProduction({ active, goTo }) {
             initial="hidden"
             animate="show"
             exit={{ opacity: 0 }}
-            className="flex-1 min-h-0 grid lg:grid-cols-[1.05fr_1fr] gap-6 lg:gap-12 xl:gap-16 items-center"
+            className="flex-1 min-h-0 grid lg:grid-cols-[1.05fr_1fr] gap-6 lg:gap-12 xl:gap-16 items-stretch"
           >
             {/* LEFT — editorial copy */}
-            <div className="min-w-0 flex flex-col justify-center">
+            <div className="min-w-0 flex flex-col h-full lg:py-4">
               <motion.div variants={item} className="inline-flex self-start items-center gap-2 rounded-[10px] px-3 py-1.5 bg-[#111111] text-white text-[11.5px] sm:text-[12px] font-semibold tracking-[0.02em]">
                 <Factory className="h-3.5 w-3.5 shrink-0" strokeWidth={2} />
                 <span>Виробництво пневмопідвіски · Україна · 20 років</span>
@@ -91,7 +91,7 @@ export function SlideProduction({ active, goTo }) {
                 ))}
               </motion.ul>
 
-              <motion.div variants={item} className="mt-6 lg:mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+              <motion.div variants={item} className="mt-auto pt-6 lg:pt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
                 <a
                   href={telegramUrl(settings)}
                   target="_blank"
@@ -275,10 +275,10 @@ export function SlideProblem({ active, goTo }) {
             initial="hidden"
             animate="show"
             exit={{ opacity: 0 }}
-            className="flex-1 min-h-0 grid lg:grid-cols-[1.05fr_1fr] gap-6 lg:gap-10 xl:gap-14 items-center relative"
+            className="flex-1 min-h-0 grid lg:grid-cols-[1.05fr_1fr] gap-6 lg:gap-10 xl:gap-14 items-stretch relative"
           >
             {/* LEFT: editorial copy + capabilities + stats + CTAs */}
-            <div className="flex flex-col justify-center min-w-0">
+            <div className="flex flex-col h-full min-w-0 lg:py-4">
               <motion.div
                 variants={item}
                 className="inline-flex self-start items-center gap-2 rounded-[10px] bg-white/10 border border-white/15 text-white text-[11px] font-bold tracking-[0.16em] uppercase px-3 py-2"
@@ -363,7 +363,7 @@ export function SlideProblem({ active, goTo }) {
               </motion.ul>
 
               {/* CTAs */}
-              <motion.div variants={item} className="mt-6 lg:mt-8 flex flex-col sm:flex-row gap-3">
+              <motion.div variants={item} className="mt-auto pt-6 lg:pt-8 flex flex-col sm:flex-row gap-3">
                 <a
                   href={telegramUrl(settings)}
                   target="_blank"
