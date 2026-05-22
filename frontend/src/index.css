@@ -302,10 +302,11 @@ body.mobile-home [data-testid^="slide-case-"] {
 }
 
 /* Hero (slide 01) — the ONE place we still pin to viewport so the opener
-   feels editorial. <main> already reserves header + sticky CTA via its
-   padding, so the section itself just needs the remaining visual height. */
+   feels editorial. <main> already reserves the 58px mobile header + the
+   sticky CTA via its padding, so the section itself just needs the
+   remaining visual height. */
 body.mobile-home [data-mobile-slide-section="0"] > div {
-    min-height: calc(100svh - var(--header-h, 80px) - var(--sticky-cta-h, 78px) - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px));
+    min-height: calc(100svh - 58px - var(--sticky-cta-h, 78px) - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px));
 }
 
 /* Increase title→content breathing room on mobile by ~10% so cards/palettes

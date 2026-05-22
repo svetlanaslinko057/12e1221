@@ -100,7 +100,7 @@ export default function MobileStack({ slides, labels }) {
         className="w-full bg-[#F7F7F5]"
         data-testid="mobile-stack-root"
         style={{
-          paddingTop: "calc(var(--header-h, 80px) + env(safe-area-inset-top, 0px))",
+          paddingTop: "calc(58px + env(safe-area-inset-top, 0px))",
           paddingBottom: "calc(var(--sticky-cta-h, 78px) + env(safe-area-inset-bottom, 0px))",
         }}
       >
@@ -133,7 +133,7 @@ function MobileTopBar({ index, total, labels, goTo, sheetOpen, setSheetOpen }) {
   return (
     <>
       <header
-        className="fixed top-0 inset-x-0 z-50 h-[var(--header-h,80px)] bg-white/92 backdrop-blur supports-[backdrop-filter]:bg-white/75 border-b border-[#E7E7E7]"
+        className="fixed top-0 inset-x-0 z-50 h-[58px] bg-white/92 backdrop-blur supports-[backdrop-filter]:bg-white/75 border-b border-[#E7E7E7]"
         style={{ paddingTop: "env(safe-area-inset-top, 0px)" }}
         data-testid="mobile-top-bar"
       >
@@ -145,20 +145,13 @@ function MobileTopBar({ index, total, labels, goTo, sheetOpen, setSheetOpen }) {
             aria-label={`${brand} — на головну`}
             data-testid="mobile-logo-button"
           >
-            <Logo variant="dark" height="h-6" />
+            <Logo variant="dark" height="h-4" />
           </button>
-
-          <div className="flex items-center gap-1.5" data-testid="mobile-page-indicator">
-            <span className="font-heading text-[14px] tabular-nums font-semibold text-[#111111]">
-              {String(index + 1).padStart(2, "0")}
-            </span>
-            <span className="text-[12px] text-[#888888]">/ {String(total).padStart(2, "0")}</span>
-          </div>
 
           <button
             type="button"
             onClick={() => setSheetOpen(true)}
-            className="inline-flex items-center gap-2 h-12 px-4 rounded-full bg-[#111111] text-white text-[13px] font-semibold"
+            className="inline-flex items-center gap-2 h-10 px-4 rounded-full bg-[#111111] text-white text-[12.5px] font-semibold"
             aria-label="Відкрити меню"
             data-testid="mobile-menu-button"
           >
@@ -222,7 +215,7 @@ function MobileSheet({ open, onClose, labels, index, goTo }) {
         } flex flex-col`}
         style={{ paddingTop: "env(safe-area-inset-top, 0px)" }}
       >
-        <div className="flex items-center justify-between px-5 h-[var(--header-h,80px)] border-b border-[#E7E7E7]">
+        <div className="flex items-center justify-between px-5 h-[58px] border-b border-[#E7E7E7]">
           <span className="font-heading text-[12px] uppercase tracking-[0.14em] font-semibold text-[#888888]">
             Навігація
           </span>
