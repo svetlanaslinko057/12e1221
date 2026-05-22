@@ -1,0 +1,343 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =============================================================
+   MONOCHROME INDUSTRIAL PREMIUM DESIGN SYSTEM
+   Specialized: Air Suspension / Air Springs (пневмоподушки)
+============================================================= */
+
+html { -webkit-text-size-adjust: 100%; }
+body {
+    margin: 0;
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #111111;
+    background: #F7F7F5;
+    font-feature-settings: 'ss01', 'cv11';
+    overflow-x: hidden;
+}
+
+html { overflow-x: hidden; }
+
+/* Suppress iOS tap highlight everywhere — we use our own active states */
+* { -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+
+/* Fullpage home lock — DESKTOP ONLY. Prevents page-level scroll so the
+   horizontal pager engine controls motion. Must NOT be active on mobile
+   (mobile uses native vertical scroll). HomePage adds/removes this class
+   based on viewport size. */
+html.home-lock, body.home-lock {
+    overflow: hidden !important;
+    height: 100dvh;
+    overscroll-behavior: none;
+    touch-action: none;
+}
+
+/* Mobile home — block stretch / pull-to-refresh while keeping native scroll */
+body.mobile-home {
+    overscroll-behavior-y: contain;
+}
+
+/* iOS Safari: prevent zoom on input focus by ensuring inputs are 16px+ on
+   small viewports. We apply globally below md (768px). */
+@media (max-width: 767.98px) {
+    input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+    select,
+    textarea {
+        font-size: 16px !important;
+    }
+}
+
+.font-heading { font-family: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif; letter-spacing: -0.015em; }
+
+@layer base {
+    :root {
+        /* Brand tokens */
+        --brand-bg: #F7F7F5;
+        --brand-surface: #FFFFFF;
+        --brand-surface-muted: #F1F1EF;
+        --brand-text: #111111;
+        --brand-text-secondary: #666666;
+        --brand-border: #E7E7E7;
+        --brand-graphite: #1A1A1A;
+
+        /* Mobile-safe sizing tokens */
+        --header-h: 80px;
+        --sticky-cta-h: 78px;
+
+        /* shadcn compat (mono-friendly) */
+        --background: 60 11% 97%;
+        --foreground: 0 0% 7%;
+        --card: 0 0% 100%;
+        --card-foreground: 0 0% 7%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 0 0% 7%;
+        --primary: 0 0% 7%;
+        --primary-foreground: 0 0% 100%;
+        --secondary: 0 0% 95%;
+        --secondary-foreground: 0 0% 7%;
+        --muted: 0 0% 95%;
+        --muted-foreground: 0 0% 40%;
+        --accent: 0 0% 95%;
+        --accent-foreground: 0 0% 7%;
+        --destructive: 0 0% 7%;
+        --destructive-foreground: 0 0% 100%;
+        --border: 0 0% 91%;
+        --input: 0 0% 91%;
+        --ring: 0 0% 7%;
+        --radius: 1rem;
+    }
+}
+
+@layer base {
+    * { @apply border-border; }
+    body { @apply bg-background text-foreground; }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+        letter-spacing: -0.02em;
+        color: #111111;
+    }
+
+    ::selection { background: #111111; color: #FFFFFF; }
+
+    html { scroll-behavior: smooth; }
+
+    :focus-visible {
+        outline: 2px solid #111111;
+        outline-offset: 2px;
+        border-radius: 10px;
+    }
+
+    /* Prevent long words overflow on mobile */
+    p, h1, h2, h3, h4, h5, h6, span, li {
+        overflow-wrap: break-word;
+    }
+
+    /* Images never cause overflow */
+    img { max-width: 100%; height: auto; }
+}
+
+@layer components {
+    .container-page { @apply mx-auto max-w-6xl 2xl:max-w-7xl px-5 sm:px-6 lg:px-8; }
+    /* Mobile-first section spacing: smaller on phones, grows on desktop */
+    .section-y { @apply py-14 sm:py-20 lg:py-24; }
+    .section-y-sm { @apply py-12 sm:py-14 lg:py-16; }
+
+    /* Panel section (presentation site feel on desktop) */
+    .panel-lg {
+        @apply lg:min-h-[92vh] lg:flex lg:flex-col lg:justify-center;
+    }
+
+    /* Safe-area utility (iOS notch/home indicator) */
+    .safe-bottom { padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 12px); }
+    .safe-bottom-lg { padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 24px); }
+
+    .surface-card {
+        background: #FFFFFF;
+        border: 1px solid #E7E7E7;
+        border-radius: 24px;
+        box-shadow: 0 1px 2px rgba(17,17,17,0.03), 0 8px 24px rgba(17,17,17,0.04);
+    }
+    .surface-muted {
+        background: #F1F1EF;
+        border: 1px solid #E7E7E7;
+        border-radius: 24px;
+    }
+    .surface-dark {
+        background: #111111;
+        color: #FFFFFF;
+        border-radius: 28px;
+    }
+
+    .btn-radius-16 { border-radius: 16px; }
+
+    .btn-primary {
+        @apply inline-flex items-center justify-center gap-2 h-12 px-6 rounded-[16px] text-base font-medium;
+        background: #111111; color: #FFFFFF;
+        transition: background-color 200ms ease, transform 200ms ease;
+    }
+    .btn-primary:hover { background: #2A2A2A; }
+    .btn-primary:active { transform: translateY(1px); }
+
+    .btn-secondary {
+        @apply inline-flex items-center justify-center gap-2 h-12 px-6 rounded-[16px] text-base font-medium;
+        background: #FFFFFF; color: #111111; border: 1px solid #E7E7E7;
+        transition: background-color 200ms ease, border-color 200ms ease;
+    }
+    .btn-secondary:hover { background: #F1F1EF; border-color: #DADADA; }
+
+    .btn-ghost {
+        @apply inline-flex items-center justify-center gap-2 h-12 px-5 rounded-[16px] text-sm font-medium;
+        background: transparent; color: #111111;
+        transition: background-color 200ms ease;
+    }
+    .btn-ghost:hover { background: #F1F1EF; }
+
+    .soft-lift {
+        transition: box-shadow 250ms ease, transform 250ms ease, border-color 250ms ease;
+    }
+    .soft-lift:hover {
+        transform: translateY(-2px);
+        border-color: #D8D8D6;
+        box-shadow: 0 2px 4px rgba(17,17,17,0.04), 0 16px 40px rgba(17,17,17,0.07);
+    }
+
+    .eyebrow {
+        @apply inline-flex items-center gap-2 rounded-full px-3 py-1 text-[11px] font-semibold tracking-[0.08em] uppercase;
+        background: #FFFFFF; color: #111111; border: 1px solid #E7E7E7;
+    }
+    .eyebrow-dark {
+        @apply inline-flex items-center gap-2 rounded-full px-3 py-1 text-[11px] font-semibold tracking-[0.08em] uppercase;
+        background: #111111; color: #FFFFFF;
+    }
+
+    .display-heading {
+        font-family: 'Space Grotesk', sans-serif;
+        font-weight: 600;
+        letter-spacing: -0.035em;
+        line-height: 0.98;
+        color: #111111;
+    }
+
+    .hairline { height: 1px; background: #E7E7E7; }
+
+    .img-neutral { filter: saturate(0.95) contrast(1.05); }
+    .img-mono { filter: grayscale(1) contrast(1.05); }
+
+    .hero-bg {
+        background: linear-gradient(180deg, #FFFFFF 0%, #F5F5F3 55%, #F1F1EF 100%);
+    }
+    .hero-heading-shadow { text-shadow: 0 1px 2px rgba(17,17,17,0.04); }
+
+    .cta-lift {
+        box-shadow: 0 10px 30px rgba(17,17,17,0.22), 0 2px 4px rgba(17,17,17,0.08);
+        transition: transform 220ms cubic-bezier(0.22,1,0.36,1), box-shadow 220ms ease, background-color 200ms ease;
+    }
+    .cta-lift:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 18px 40px rgba(17,17,17,0.28), 0 4px 8px rgba(17,17,17,0.1);
+    }
+
+    /* Body padding when sticky mobile CTA is visible — prevents overlap on last section */
+    .has-sticky-mcta { padding-bottom: calc(var(--sticky-cta-h) + env(safe-area-inset-bottom, 0px)); }
+}
+
+/* =============================================================
+   MOBILE VERTICAL MODE OVERRIDES (body.mobile-home)
+   Applied only when HomePage is in mobile mode (<768px). The desktop
+   horizontal pager uses fixed-height pages so many cards use
+   `flex-1 min-h-0` to fill the remaining space. On mobile we have no
+   such fixed-height parent — these overrides give those cards intrinsic
+   sizing (aspect-ratio / min-height) so they remain visible & readable.
+============================================================= */
+body.mobile-home {
+    overscroll-behavior-y: contain;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Product card on slide 03 — image area gets a 4:3 aspect ratio instead
+   of being a flex-1 fill (no parent height on mobile). */
+body.mobile-home [data-testid="product-card"] {
+    height: auto;
+}
+body.mobile-home [data-testid="product-card"] > div:first-child {
+    aspect-ratio: 4 / 3;
+    flex: none;
+    height: auto;
+    min-height: 0;
+}
+
+/* Slide 03 featured product grid — single column on small phones */
+@media (max-width: 539.99px) {
+    body.mobile-home [data-testid="featured-products-grid"] {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* Case cards on slide 04 — each card needs an intrinsic ratio because
+   absolutely-positioned content inside needs a sized parent. */
+body.mobile-home [data-testid^="slide-case-"] {
+    aspect-ratio: 5 / 6;
+    min-height: 200px;
+}
+
+/* Hero secondary image column is hidden on mobile via `hidden lg:flex`.
+   The primary text column should have generous top padding instead of
+   relying on the now-removed flex-1 fill. */
+body.mobile-home .hero-bg {
+    padding-top: 8px;
+    padding-bottom: 24px;
+}
+
+/* Slide sections must clip horizontally — some slides use decorative radial
+   blur elements positioned outside the slide bounds (-top-32, -right-32 etc)
+   which on desktop are clipped by the fixed-width pager panel but on mobile
+   need explicit overflow-x clipping. */
+body.mobile-home [data-mobile-slide-section] {
+    overflow-x: clip;
+}
+
+/* All slide sections — add bottom separator + bottom margin so vertical
+   scroll feels paced (otherwise sections blur into each other). */
+body.mobile-home [data-mobile-slide-section] + [data-mobile-slide-section] {
+    border-top: 1px solid rgba(17, 17, 17, 0.06);
+}
+
+/* Reduce top whitespace on the very first slide (hero) — header bar takes 64px */
+body.mobile-home [data-mobile-slide-section="0"] .hero-bg {
+    min-height: calc(100svh - 1px);
+}
+
+/* Solidify input legibility on mobile — already overridden globally to 16px,
+   here we just ensure adequate height. */
+@media (max-width: 767.98px) {
+    body.mobile-home input,
+    body.mobile-home textarea,
+    body.mobile-home select {
+        min-height: 48px;
+    }
+}
+
+/* Mobile-only utility classes for sticky CTA / safe-area */
+@media (max-width: 767.98px) {
+    body.mobile-home { padding-bottom: calc(var(--sticky-cta-h, 78px) + env(safe-area-inset-bottom, 0px)); }
+}
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: #F7F7F5; }
+::-webkit-scrollbar-thumb { background: #D8D8D6; border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background: #B8B8B6; }
+
+/* Respect user reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+@layer base {
+    [data-debug-wrapper="true"] { display: contents !important; }
+    [data-debug-wrapper="true"] > * {
+        margin-left: inherit; margin-right: inherit; margin-top: inherit; margin-bottom: inherit;
+        padding-left: inherit; padding-right: inherit; padding-top: inherit; padding-bottom: inherit;
+        column-gap: inherit; row-gap: inherit; gap: inherit;
+        border-left-width: inherit; border-right-width: inherit; border-top-width: inherit; border-bottom-width: inherit;
+        border-left-style: inherit; border-right-style: inherit; border-top-style: inherit; border-bottom-style: inherit;
+        border-left-color: inherit; border-right-color: inherit; border-top-color: inherit; border-bottom-color: inherit;
+    }
+}
+
+.bg-grain::before {
+    content: "";
+    position: absolute; inset: 0;
+    background-image: radial-gradient(rgba(17,17,17,0.04) 1px, transparent 1px);
+    background-size: 3px 3px;
+    opacity: 0.35;
+    pointer-events: none;
+}
