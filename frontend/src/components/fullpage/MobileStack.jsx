@@ -96,7 +96,14 @@ export default function MobileStack({ slides, labels }) {
         setSheetOpen={setSheetOpen}
       />
 
-      <main className="w-full bg-[#F7F7F5]" data-testid="mobile-stack-root">
+      <main
+        className="w-full bg-[#F7F7F5]"
+        data-testid="mobile-stack-root"
+        style={{
+          paddingTop: "calc(var(--header-h, 80px) + env(safe-area-inset-top, 0px))",
+          paddingBottom: "calc(var(--sticky-cta-h, 78px) + env(safe-area-inset-bottom, 0px))",
+        }}
+      >
         {slides.map((Slide, i) => (
           <section
             id={`slide-${i + 1}`}

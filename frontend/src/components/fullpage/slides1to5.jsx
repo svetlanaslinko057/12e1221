@@ -91,12 +91,12 @@ export function SlideProduction({ active, goTo }) {
                 ))}
               </motion.ul>
 
-              <motion.div variants={item} className="mt-5 lg:mt-6 flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5">
+              <motion.div variants={item} className="mt-6 lg:mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
                 <a
                   href={telegramUrl(settings)}
                   target="_blank"
                   rel="noreferrer"
-                  className="group relative inline-flex items-center justify-center gap-3 h-12 lg:h-[54px] px-5 sm:px-6 rounded-[14px] sm:rounded-[16px] text-[14px] sm:text-[15px] font-semibold bg-[#111111] text-white hover:bg-[#000000] transition-colors cta-lift w-full sm:w-auto"
+                  className="group relative inline-flex items-center justify-center gap-3 h-14 lg:h-[60px] px-6 sm:px-7 rounded-[14px] sm:rounded-[16px] text-[14px] sm:text-[15px] font-semibold bg-[#111111] text-white hover:bg-[#000000] transition-colors cta-lift w-full sm:w-auto"
                   data-testid="hero-primary-cta"
                 >
                   <span>Отримати прайс від виробника</span>
@@ -107,7 +107,7 @@ export function SlideProduction({ active, goTo }) {
                 <button
                   type="button"
                   onClick={() => goTo(2)}
-                  className="inline-flex items-center justify-center gap-2 h-12 lg:h-[54px] px-5 rounded-[14px] sm:rounded-[16px] text-[13.5px] sm:text-[14.5px] font-medium bg-transparent text-[#111111] border border-[#111111]/20 hover:bg-[#111111] hover:text-white transition-colors"
+                  className="inline-flex items-center justify-center gap-2 h-14 lg:h-[60px] px-6 rounded-[14px] sm:rounded-[16px] text-[13.5px] sm:text-[14.5px] font-medium bg-transparent text-[#111111] border border-[#111111]/20 hover:bg-[#111111] hover:text-white transition-colors micro-lift"
                   data-testid="hero-secondary-cta"
                 >
                   Переглянути продукцію
@@ -363,12 +363,12 @@ export function SlideProblem({ active, goTo }) {
               </motion.ul>
 
               {/* CTAs */}
-              <motion.div variants={item} className="mt-5 lg:mt-6 flex flex-col sm:flex-row gap-2.5">
+              <motion.div variants={item} className="mt-6 lg:mt-8 flex flex-col sm:flex-row gap-3">
                 <a
                   href={telegramUrl(settings)}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center justify-center gap-2 h-12 lg:h-[52px] px-5 rounded-[12px] text-[14px] font-semibold bg-white text-[#111111] hover:bg-[#F1F1EF] transition-colors cta-lift"
+                  className="inline-flex items-center justify-center gap-2 h-14 lg:h-[58px] px-6 rounded-[12px] text-[14px] font-semibold bg-white text-[#111111] hover:bg-[#F1F1EF] transition-colors cta-lift"
                   data-testid="slide-manufacturing-cta"
                 >
                   Отримати прайс від виробника <ArrowRight className="h-4 w-4" />
@@ -376,7 +376,7 @@ export function SlideProblem({ active, goTo }) {
                 <button
                   type="button"
                   onClick={() => goTo(2)}
-                  className="inline-flex items-center justify-center gap-2 h-12 lg:h-[52px] px-5 rounded-[12px] text-[13px] font-medium bg-white/8 text-white border border-white/15 hover:bg-white/15 transition-colors"
+                  className="inline-flex items-center justify-center gap-2 h-14 lg:h-[58px] px-6 rounded-[12px] text-[13px] font-medium bg-white/8 text-white border border-white/15 hover:bg-white/15 transition-colors micro-lift"
                 >
                   Продукція <ArrowDown className="h-4 w-4" />
                 </button>

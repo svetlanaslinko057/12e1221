@@ -248,15 +248,14 @@ body.mobile-home {
    min-height; sections are content-sized. The first section (hero)
    gets the only viewport-anchored min-height so the brand opener
    still feels full-bleed. Between sections we use seamless flow —
-   no gray gaps, no aggressive borders, no internal scroll. Sticky
-   CTA bar (78px) is reserved via body padding-bottom.
+   no gray gaps, no aggressive borders, no internal scroll. The
+   fixed header (80px top) + sticky CTA (78px bottom) clearances
+   are reserved inside <main> by MobileStack itself, NOT on body,
+   so there are zero conflicts with sticky/fixed positioning.
 ============================================================= */
 body.mobile-home {
     overscroll-behavior-y: contain;
     -webkit-overflow-scrolling: touch;
-    /* Reserve room for fixed header (top) + sticky bottom CTA */
-    padding-top: calc(var(--header-h, 80px) + env(safe-area-inset-top, 0px));
-    padding-bottom: calc(var(--sticky-cta-h, 78px) + env(safe-area-inset-bottom, 0px));
 }
 
 /* Each mobile section sits intrinsically (content-height) — NO forced
@@ -303,8 +302,8 @@ body.mobile-home [data-testid^="slide-case-"] {
 }
 
 /* Hero (slide 01) — the ONE place we still pin to viewport so the opener
-   feels editorial. Body already reserves the header offset via padding-top,
-   so the slide just needs to fill the remaining safe space. */
+   feels editorial. <main> already reserves header + sticky CTA via its
+   padding, so the section itself just needs the remaining visual height. */
 body.mobile-home [data-mobile-slide-section="0"] > div {
     min-height: calc(100svh - var(--header-h, 80px) - var(--sticky-cta-h, 78px) - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px));
 }
