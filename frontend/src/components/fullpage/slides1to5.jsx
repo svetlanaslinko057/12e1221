@@ -83,7 +83,7 @@ export function SlideProduction({ active, goTo }) {
                 {HERO_AUDIENCE.map((a) => (
                   <li
                     key={a.label}
-                    className="inline-flex items-center gap-1.5 rounded-full bg-white border border-[#E7E7E7] px-2.5 py-1 text-[11.5px] lg:text-[12px] font-semibold text-[#111111]"
+                    className="inline-flex items-center gap-1.5 rounded-full bg-white border border-[#E7E7E7] px-2.5 py-1 text-[11.5px] lg:text-[12px] font-semibold text-[#111111] micro-lift"
                   >
                     <a.icon className="h-3.5 w-3.5 text-[#111111]" strokeWidth={2} />
                     {a.label}
@@ -569,7 +569,7 @@ export function SlideProductsAndCases({ active }) {
                           <li key={i} className="h-9 rounded-[8px] bg-[#F7F7F5] animate-pulse" />
                         ) : (
                           <li key={c.slug} className="min-w-0">
-                            <div className="group flex items-center gap-2 h-9 lg:h-[40px] px-2 lg:px-2.5 rounded-[8px] lg:rounded-[10px] bg-[#FAFAF9] hover:bg-[#111111] hover:text-white transition-colors cursor-default" data-testid={`slide-category-${c.slug}`}>
+                            <div className="group flex items-center gap-2 h-9 lg:h-[40px] px-2 lg:px-2.5 rounded-[8px] lg:rounded-[10px] bg-[#FAFAF9] hover:bg-[#111111] hover:text-white transition-colors cursor-default micro-lift" data-testid={`slide-category-${c.slug}`}>
                               <span className="shrink-0 h-7 w-7 lg:h-8 lg:w-8 rounded-[6px] overflow-hidden bg-[#F1F1EF] relative">
                                 {c.image ? (
                                   <img src={imageUrl(c.image)} alt="" className="absolute inset-0 w-full h-full object-cover img-neutral" loading="lazy" />
@@ -610,7 +610,7 @@ export function SlideProductsAndCases({ active }) {
                     {CASE_TAGS.map((c, i) => (
                       <article
                         key={c.tag}
-                        className="group relative rounded-[16px] lg:rounded-[16px] overflow-hidden border border-[#E7E7E7] bg-white block shrink-0 w-[44%] sm:w-[32%] lg:w-auto snap-start aspect-[3/4] lg:aspect-auto"
+                        className="group relative rounded-[16px] lg:rounded-[16px] overflow-hidden border border-[#E7E7E7] bg-white block shrink-0 w-[44%] sm:w-[32%] lg:w-auto snap-start aspect-[3/4] lg:aspect-auto micro-lift"
                         data-testid={`slide-case-${c.tag}`}
                       >
                         <div className="absolute inset-0 overflow-hidden bg-[#F1F1EF]">

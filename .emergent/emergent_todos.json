@@ -1,0 +1,30 @@
+[
+  {
+    "content": "Fix mobile SlideShell: remove min-h-[100svh] per-slide for continuous ribbon flow",
+    "status": "completed"
+  },
+  {
+    "content": "Update index.css mobile overrides: tighten section spacing, remove forced heights",
+    "status": "completed"
+  },
+  {
+    "content": "Remove 'Адмін' link from mobile sheet menu and footer (mobile)",
+    "status": "completed"
+  },
+  {
+    "content": "Increase title-to-content spacing by 10% on mobile slides 3/4/5",
+    "status": "completed"
+  },
+  {
+    "content": "Add subtle hover micro-lift effects on desktop interactive elements",
+    "status": "completed"
+  },
+  {
+    "content": "Increase final CTA / form card sizing on mobile by 10%",
+    "status": "completed"
+  },
+  {
+    "content": "Verify on preview URL with screenshots (desktop + mobile)",
+    "status": "completed"
+  }
+]

@@ -207,17 +207,18 @@ export function SlideShell({ children, dark = false, padded = true, className = 
     <div
       className={`w-full relative ${
         isMobile
-          ? "min-h-[100svh] overflow-x-hidden"
+          ? "overflow-x-hidden"
           : "h-full overflow-hidden"
       } ${dark ? "bg-[#111111] text-white" : "bg-[#F7F7F5] text-[#111111]"} ${className}`}
+      data-slide-shell={isMobile ? "mobile" : "desktop"}
     >
       <div
         className={`w-full flex flex-col items-stretch ${
-          isMobile ? "min-h-[100svh]" : "h-full"
+          isMobile ? "" : "h-full"
         } ${
           padded
             ? isMobile
-              ? "px-5 pt-[calc(var(--header-h,80px)+20px)] pb-[calc(var(--sticky-cta-h,78px)+env(safe-area-inset-bottom,0px)+28px)]"
+              ? "px-5 py-7 sm:py-9"
               : "pl-3 sm:pl-5 lg:pl-8 xl:pl-10 pr-3 sm:pr-5 md:pr-[70px] lg:pr-[82px] xl:pr-[92px] pt-[60px] sm:pt-[64px] lg:pt-[68px] pb-3 sm:pb-4 lg:pb-5"
             : ""
         }`}

@@ -1,5 +1,4 @@
 import { useEffect, useState, useCallback } from "react";
-import { Link } from "react-router-dom";
 import { Menu, Send, Phone, MessageCircle, X, ArrowRight, Mail } from "lucide-react";
 import { useSettings } from "@/lib/settings-context";
 import { telegramUrl, whatsappUrl, telUrl, mailtoUrl } from "@/lib/cta";
@@ -329,14 +328,6 @@ function MobileSheet({ open, onClose, labels, index, goTo }) {
               <ArrowRight className="h-3.5 w-3.5 shrink-0 text-[#999999]" />
             </a>
           ) : null}
-          <Link
-            to="/admin"
-            onClick={onClose}
-            className="mt-1 text-center text-[12px] text-[#888888] hover:text-[#111111] transition-colors"
-            data-testid="mobile-sheet-admin"
-          >
-            Адмін
-          </Link>
         </div>
       </div>
     </div>
