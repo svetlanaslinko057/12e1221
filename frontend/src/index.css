@@ -35,6 +35,19 @@ html.home-lock, body.home-lock {
     touch-action: none;
 }
 
+/* DEFENSIVE: if for any reason both mobile-home AND home-lock end up on
+   the same element (race condition during viewport change, browser
+   resize, cached state), mobile-home ALWAYS wins so the mobile user
+   can scroll. */
+html.mobile-home, body.mobile-home {
+    overflow: visible !important;
+    overflow-y: auto !important;
+    height: auto !important;
+    touch-action: pan-y !important;
+    overscroll-behavior-y: contain;
+    -webkit-overflow-scrolling: touch;
+}
+
 /* Mobile home — block stretch / pull-to-refresh while keeping native scroll */
 body.mobile-home {
     overscroll-behavior-y: contain;
