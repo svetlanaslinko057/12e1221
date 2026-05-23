@@ -100,7 +100,8 @@ export function SlideTestimonials({ active }) {
             key="s6"
             variants={container(0.05)}
             initial="hidden"
-            animate="show"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.15 }}
             exit={{ opacity: 0 }}
             className={`${isMobile ? "" : "flex-1 min-h-0"} flex flex-col relative`}
           >
@@ -358,7 +359,7 @@ export function SlideFinal({ active }) {
     <SlideShell dark>
       <AnimatePresence mode="wait">
         {active ? (
-          <motion.div key="s7" variants={container(0.05)} initial="hidden" animate="show" exit={{ opacity: 0 }} className="flex-1 min-h-0 flex flex-col">
+          <motion.div key="s7" variants={container(0.05)} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.15 }} exit={{ opacity: 0 }} className="flex-1 min-h-0 flex flex-col">
             <SlideHeader>
               <motion.div variants={item} className="flex items-end justify-between flex-wrap gap-3">
                 <div className="max-w-2xl">
